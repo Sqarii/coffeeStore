@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+
+html{
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow: hidden;
+}
+
+header, section, div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+h2{
+    text-align: left;
+    font-weight: 400;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+p{
+    text-align: left;
+    font-size: .8em;
+    font-weight: 300;
+    line-height: 25px;
+    margin: 1.5em 0;
+}
+
+.mt-1{ margin-top: 1em;}
+.mt-2{ margin-top: 2em;}
+.mt-3{ margin-top: 3em;}
+.mt-4{ margin-top: 4em;}
+.mt-5{ margin-top: 5em;}
+
+.mb-1{ margin-bottom: 1em;}
+.mb-2{ margin-bottom: 2em;}
+.mb-5{ margin-bottom: 5em;}
+.mb-3{ margin-bottom: 3em;}
+.mb-4{ margin-bottom: 4em;}
+
+.mr-1{ margin-right: 1em;}
+.mr-2{ margin-right: 2em;}
+.mr-5{ margin-right: 5em;}
+.mr-3{ margin-right: 3em;}
+.mr-4{ margin-right: 4em;}
+
+.ml-1{ margin-left: 1em;}
+.ml-2{ margin-left: 2em;}
+.ml-5{ margin-left: 5em;}
+.ml-3{ margin-left: 3em;}
+.ml-4{ margin-left: 4em;}
+
+/* LAYOUT */
+
+section{
+    height: 50vh;
+    width: 100%;
+}
+
+/* HEADER */
+
+header{
+    position: fixed;
+    flex-direction: row;
+    color: #fff;
+    margin: 0;
+}
+
+header p{
+    font-size: 1em;
+    margin: 0;
+    cursor: pointer;
+}
+
+nav{
+    display: flex;
+    gap: 1em;
+    font-size: 1.1em;
+}
+
+button, i{
+    cursor: pointer;
+}
+
+.container{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em 1em;
+}
+
+/* IMAGE SECTION */
+
+.img-section{
+    background-color: #121212;
+    background-image: url('../imgs/black-wooden-background.jpg');
+    justify-content: center;
+    align-items: center;
+}
+
+.img-section img{
+    /* width: 65%; */
+    width: 250px;
+    height: auto;
+}
+
+.img-coffee{
+    transform: translateX(0);
+}
+
+.img-coffee-in{
+    animation: coffee-in 1.5s ease-in-out;
+    transform: translateX(0);
+}
+
+@keyframes coffee-in {
+    from{
+        transform: translateX(-100vw) rotate(360deg);
+    }
+
+    to{
+        transform: translateX(0%) rotate(0deg);
+    }
+}
+
+.img-coffee-out{
+    animation: coffee-out 1.5s ease-in-out;
+    transform: translateX(100vw);
+}
+
+@keyframes coffee-out {
+    from{
+        transform: translateX(0%) rotate(0deg);
+    }
+    
+    to{
+        transform: translateX(100vw) rotate(360deg);
+    }
+}
+
+/* DESCRIPTION SECTION */
+
+.des-section{
+    background-color: #eeebe6;
+}
+
+.des-section-div{
+    justify-content: center;
+    align-items: center;
+}
+
+.des-container{
+    width: 80%;
+    justify-content: space-between;
+    transform: translateX(0);
+}
+
+#des1{
+    display: flex;
+}
+
+#des2{
+    display: none;
+}
+
+#des3{
+    display: none;
+}
+
+.des-container-in{
+    animation: des-in 1s ease-in-out;
+    transform: translateX(0);
+    justify-content: space-between;
+}
+
+@keyframes des-in {
+    from{
+        transform: translateX(100vw);
+    }
+
+    to{
+        transform: translateX(0%);
+    }
+}
+
+.des-container-out{
+    animation: des-out 1s ease-in-out;
+    transform: translateX(-100vw);
+    justify-content: space-between;
+}
+
+@keyframes des-out {
+    from{
+        transform: translateX(0%);
+    }
+    
+    to{
+        transform: translateX(-100vw);
+    }
+}
+
+
+.btn-cart{
+    border: none;
+    padding: 1em 1.5em;
+    background-color: #d0bb94;
+    /* width: 100px; */
+    transition: .5s;
+}
+
+.btn-cart:hover{
+    background-color: #121212;
+    color: #fff;
+}
+
+/* BUTTON CONTAINER */
+
+.btn-container{
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;   
+    left: 50%;
+}
+
+.btn-coffee{
+    border: none;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: #d0bb94;
+    font-size: 1.5em;
+    color: #000;
+    text-align: center;
+}
+
+#btn-coffee1{
+    color: #000;
+    border: 3px solid #eeebe6;
+    cursor: pointer;
+}
+
+#btn-coffee2{
+    color: #964b00;
+    border: none;
+    cursor: pointer;
+}
+
+#btn-coffee3{
+    color: #e6e0d4;
+    border: none;
+    cursor: pointer;
+}
+
+@media (min-width: 1020px){
+    
+    body{
+        flex-direction: row;
+    }
+
+    section{
+        width: 50vw;
+        height: 100vh;
+    }
+
+    .btn-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-section img{
+        width: 350px;
+    }
+
+    h2{
+        font-size: 2.5em;
+    }
+
+    p{
+        font-size: 1em;
+    }
+
+    nav{
+        color: #000;
+    }
+
+    header p{
+        font-size: 1.2em;
+    }
+
+    .img-coffee-in{
+        animation: coffee-in 1s ease-in-out;
+        transform: translateY(0);
+    }
+
+    @keyframes coffee-in {
+        from{
+            transform: translateY(-100vh) rotate(360deg);
+        }
+    
+        to{
+            transform: translateY(0%) rotate(0deg);
+        }
+    }
+
+    .img-coffee-out{
+        animation: coffee-out 1s ease-in-out;
+        transform: translateY(100vw);
+    }
+
+    @keyframes coffee-out {
+        from{
+            transform: translateY(0%) rotate(0deg);
+        }
+        
+        to{
+            transform: translateY(100vh) rotate(360deg);
+        }
+    }
+
+    .des-container-in{
+        animation: des-in 1s ease-in-out;
+        transform: translateX(0);
+        justify-content: space-between;
+    }
+
+    @keyframes des-in {
+        from{
+            transform: translateY(100vh);
+        }
+    
+        to{
+            transform: translateY(0%);
+        }
+    }
+
+    .des-container-out{
+        animation: des-out 1s ease-in-out;
+        transform: translateX(-100vh);
+        justify-content: space-between;
+    }
+
+    @keyframes des-out {
+        from{
+            transform: translateY(0%);
+        }
+        
+        to{
+            transform: translateY(-100vh);
+        }
+    }
+}
+
+
+
+
+
+
+
